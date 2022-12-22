@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+	<style>
+		body{
+            background-image: url(https://nayainsurancetax.com/wp-content/uploads/2019/01/insurance-quote-form-background-fontana-ca.jpg);
+            height: 100%;
+            background-size: cover;
+		
+        }
+		.form{
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+			height: 500px;
+            background: #fff;
+            border-radius: 5px;
+            border-collapse: 100px;
+            text-align: center;
+            padding: 20px 20px 5px 20px;
+        }
+		footer{
+			padding-top: 580px;
+			text-align: center;
+			color: #fff;
+		}
+		form input{
+			text-align:left;
+            height: 35px;
+            width: 80%;
+            outline: none;
+            padding: 0 55px;
+            padding-left: 40px;
+            font-size: 15px;
+            border-radius: ;
+			border: 2px solid #f0f0f0;
+        }
+		form input[type="radio"]{
+            width: 25px;
+            height: 25px;
+            margin: 0 10px;
+            align-content: left;
+        }
+		form input[type="submit"]{
+            text-align: center;
+            border: none;
+            background: #34495e;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover{
+            background: #333867;
+        }
+		.input-area{
+			display: -ms-flexbox;
+			display: flex;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.icon{
+			padding: 10px;
+			color: #fff;
+			background: #34495e;
+			min-width: 30px;
+			text-align: center;
+			position: relative;
+			border-radius: ;
+		}
+		.input-field{
+			width: 100%;	
+			outline: none;
+		}
+		form select{
+			height: 40px;
+			width: 100%;
+			outline: none;
+			border: 2px solid #f0f0f0;
+			padding: 0 15px;
+			font-size: 15px;
+
+		}
+
+	</style>
+	<script type="text/javascript">
+		function verify()
+{
+	var name = document.getElementById("name");
+	var email = document.getElementById("email");
+	var gender = document.getElementsByName("gender");
+	var pass = document.getElementById("pass");
+	var address = document.getElementById("address");
+	var phone = document.getElementById("phone");
+	var country = document.getElementById("selection");
+	var msg = new Array();
+	var flag = 1;
+	var message2 = "Following Details are Required\n";
+	var phoneNo = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	var validEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if(name.value == "")
+	{
+		msg[0] = "Name is Required";
+		flag = 0;
+	} else { msg[0] = ""; }
+
+	if(!email.value.match(validEmail)){
+		msg[1] = "Please Enter a valid Email"
+		flag = 0;
+	}
+	else{ msg[1] = ""; }
+
+	if(phone.value == "")
+	{
+		msg[2] = "Phone number is required";
+		flag = 0;
+	} else { msg[2] = ""; }
+
+	if(!phone.value.match(phoneNo)){
+		msg[3] = "Please Enter a valid Phone Number"
+		flag = 0;
+	}
+	else{ msg[3] = ""; }
+
+	if(address.value == "")
+	{
+		msg[4] = "Address is Required";
+		flag = 0;
+	} else { msg[4] = ""; }
+
+
+	if(gender[0].checked == false && gender[1].checked == false)
+	{
+		msg[5] = "Select Gender";
+		flag = 0;
+	} else { msg[5] = ""; }
+
+	if(country.value == "Default"){
+		msg[6] = "Select Department";
+		flag = 0;
+	}else { msg[6] = ""; }
+	
+	if(flag == 0)
+	{
+		// Show Error Messages
+		for(var x=0;x<=6;x++)
+		{
+			if(msg[x] != "")
+			{
+				message2 += "*" +msg[x] + "\n";
+			}
+		}
+		alert(message2)
+		//document.getElementById("abc").innerHTML = "<p style='color:red; background-color: lightgray ; text-align: inline;'>"+message2+"</p>";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+</script>
+	</script>
+	<title>Form</title>
+</head>
+<body>
+	<header>
+
+	</header>
+<div class="form">
+	<div align="center">
+	
+    <h3 id="abc"></h3>
+    <form name="myform" method="post" action="" onSubmit="return verify()">
+    	<table  cellspacing="0" cellpadding="7">
+        <tr>
+        	<td colspan="2" align="center" style="font-size:30px; padding-bottom: 20px;" ><b>Online Exam Registration Form</b></td>
+       </tr>
+
+       <tr>
+        <td>
+			<div class="input-area">
+				<i class="fa fa-user icon"></i>
+				<input class="input-field" type="text" name="name" id="name" size="25" placeholder="Enter Full Name" />
+			</div>
+		</td>
+       </tr>
+
+	   <tr>
+        <td>
+			<div class="input-area">
+				<i class="fa fa-envelope icon"></i>
+				<input class="input-field" type="text" name="email" id="email" size="25" placeholder="Enter Email" />
+			</div>
+		</td>
+       </tr>
+	
+	   <tr>
+		<td>
+			<div class="input-area">
+				<i class="fa fa-phone icon"></i>
+				<input class="input-field" type="phoneNo" name="phoneNo" size="25" id="phone" placeholder="Enter Phone Number" />
+			</div>
+		</td>
+	   </tr>
+
+	   <tr>
+		<td>
+			<div class="input-area">
+				<i class="fa fa-home icon"></i>
+				<input class="input-field" type="address" name="address" size="25" id="address" placeholder="Enter Address" />
+			</div>
+		</td>
+	   </tr>
+
+       <tr>
+        <td style="display:flex; flex-direction: row;  font-size: 20px; padding-top: 10px;">
+			<input type="radio" name="gender" value="Male" /> Male
+        	<input type="radio" name="gender" value="Female" /> Female
+        </td>
+        </tr>
+		
+		<tr>
+			<td>
+				<div class="select-btn">
+					<select name="Courses" id="selection">
+						<option value="Default">Select Department</option>
+						<option value="">Electronics And Telecommunication</option>
+						<option value="">Computer Science</option>
+						<option value="">Electrical</option>
+						<option value="">Mechanical</option>
+						<option value="">Artificial Intelligance</option>
+						<option value="">Data Science</option>
+					</select>
+				</div>
+			</td>
+		   </tr>
+
+            <tr>
+            	<td align="center" colspan="2" style="display:flex; flex-direction: row; ">
+                <input type="submit" name="register" value="REGISTER" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" name="clear" value="CLEAR" />
+                </td>
+            </tr> 
+        </table>
+    </form>
+    <br>
+	<br>
+	</div>
+</div>
+<footer >
+	<h3>&copy;UpasanaMarskole|Department of Electronics and Telecommunication|USN: ET20084|S.B.Jain</h3>
+</footer>
+</body>
+</html>
